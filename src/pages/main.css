@@ -1,0 +1,11 @@
+h5 {
+  color: #ffffff;
+}
+.router-nav {
+  text-decoration: none;
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}

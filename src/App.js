@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import MainLayout from "./pages/MainLayout";
+import Settings from "./pages/components/Settings";
+import Theme from "./pages/components/Theme";
+import LocalStorage from "./pages/components/LocalStorage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Theme />} />
+          <Route path="/local-storage" element={<LocalStorage />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
-
-export default App;
